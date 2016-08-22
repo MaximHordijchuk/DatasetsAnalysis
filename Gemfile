@@ -47,3 +47,11 @@ end
 
 # Use Bootstrap stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
+# Use AngularJS library
+gem 'angular-rails'
+# Use devise for user authentication
+gem 'devise'
+# Use AngularDevise for Angular authentication support
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
