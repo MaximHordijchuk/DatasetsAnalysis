@@ -64,4 +64,19 @@ class Statistics
     upper_val = q3 + k * difference
     dataset.select { |elem| elem < lower_val || elem > upper_val }
   end
+
+  # Datasets must have an equal size and include
+  # 3 or more different numbers
+  # Return correlation between two datasets
+  def self.correlation(dataset1, dataset2)
+    avg1 = average(dataset1)
+    avg2 = average(dataset2)
+    len = dataset1.size
+    numerator = 0
+    len.times { |i| numerator += (dataset1[i] - avg1) * (dataset2[i] - avg2) }
+    sum1 = dataset1.inject(0) { |sum, n| sum + (n - avg1) * (n - avg1) }
+    sum2 = dataset2.inject(0) { |sum, n| sum + (n - avg2) * (n - avg2) }
+    denominator = Math.sqrt(sum1 * sum2)
+    numerator / denominator
+  end
 end

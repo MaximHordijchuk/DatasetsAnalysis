@@ -13,7 +13,11 @@
   <div class="col-lg-10 col-lg-offset-1">
     <header>
       <h1 class="header-title">Datasets analysis</h1>
-      <div ng-controller="SessionsCtrl" ng-show="isAuthenticated()">
+      <div ng-controller="SessionsCtrl" ng-show="isAuthenticated()" class="nav-buttons">
+        <button class="btn btn-default" ng-show="page == 'index'"
+                ng-click="goto('correlation')">Correlation check</button>
+        <button class="btn btn-default" ng-show="page == 'correlation'"
+                ng-click="goto('index')">Back</button>
         <button class="btn btn-default signout-btn" ng-click="logout()">Sign out</button>
       </div>
     </header>

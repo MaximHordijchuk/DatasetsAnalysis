@@ -16,23 +16,55 @@
   </div>
 </div>
 
-<div ng-show="page == 'index'">
-  <div ng-controller="AnalyzeCtrl">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="example-block">
-          <span>Enter at least 3 numbers without spaces like:</span>
-          <code>1,2,3,4,5,6,7</code>
-        </div>
-        <div class="form-group">
-          <textarea rows="10" placeholder="Enter dataset here" name="dataset" class="form-control" ng-model="dataset"></textarea>
-        </div>
-        <button class="btn btn-info" ng-click="analyze()">Analyse</button>
+<div class="row" ng-show="page == 'index'" ng-controller="AnalyzeCtrl">
+  <div class="col-md-8">
+    <div class="example-block">
+      <span>Enter at least 3 numbers without spaces like:</span>
+      <code>1,2,3,4,5,6,7</code>
+    </div>
+    <div class="form-group">
+      <textarea rows="10" placeholder="Enter dataset here" class="form-control" ng-model="dataset"></textarea>
+    </div>
+    <button class="btn btn-info" ng-click="analyze()">Analyse</button>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default" ng-show="results != null">
+      <div class="panel-heading">Results</div>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="(key, value) in results">{{ key | capitalize }}: {{ value }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div ng-show="page == 'correlation'" ng-controller="CorrelationCtrl">
+  <h3>Correlation check between two datasets</h3>
+  <div class="example-block">
+    <span>Enter 2 arrays of data of <strong>equal length</strong>. Each array should contain <strong>at least 3 different numbers</strong>.</span>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <textarea rows="10" placeholder="Enter first dataset here" class="form-control" ng-model="dataset1"></textarea>
       </div>
-      <div class="col-md-4">
-        <ul class="list-group">
-          <li class="list-group-item" ng-repeat="(key, value) in results">{{ key | capitalize }}: {{ value }}</li>
-        </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <textarea rows="10" placeholder="Enter second dataset here" class="form-control" ng-model="dataset2"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-info" ng-click="calculate()">Calculate</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="correlation-result" class="panel panel-default">
+        <div class="panel-body">
+          <h5>Result: {{ result }}</h5>
+        </div>
       </div>
     </div>
   </div>

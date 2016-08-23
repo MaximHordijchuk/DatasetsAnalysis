@@ -1,15 +1,17 @@
-app.controller('AnalyzeCtrl', function ($scope, $http) {
-    $scope.analyze = function () {
-        console.log("Sending dataset to the server");
+app.controller('CorrelationCtrl', function ($scope, $http) {
+    $scope.calculate = function () {
+        console.log("Sending datasets to the server");
         $http({
             method: 'POST',
-            url: '/analyze',
-            data: { dataset: $scope.dataset }
+            url: '/correlation',
+            data: {
+                dataset1: $scope.dataset1,
+                dataset2: $scope.dataset2
+            }
         }).then(function successCallback(response) {
             console.log("Response received");
             console.log(response);
-            $scope.results = response.data;
-            $scope.results.outliers = $scope.results.outliers.join(',')
+            $scope.result = response.data.result;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
