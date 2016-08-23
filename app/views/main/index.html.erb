@@ -18,13 +18,22 @@
 
 <div ng-show="page == 'index'">
   <div ng-controller="AnalyzeCtrl">
-    <form ng-submit="analyze()">
-      <label>
-        <textarea ng-model="array"></textarea>
-      </label>
-      <br>
-      <%= submit_tag 'Analyse' %>
-    </form>
-    <p>min = {{ min }}</p>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="example-block">
+          <span>Enter at least 3 numbers without spaces like:</span>
+          <code>1,2,3,4,5,6,7</code>
+        </div>
+        <div class="form-group">
+          <textarea rows="10" placeholder="Enter dataset here" name="dataset" class="form-control" ng-model="dataset"></textarea>
+        </div>
+        <button class="btn btn-info" ng-click="analyze()">Analyse</button>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="(key, value) in results">{{ key | capitalize }}: {{ value }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
