@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="datasetsAnalysis">
 <head>
   <title>DatasetsAnalysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div class="container" ng-controller="ApplicationCtrl">
+  <div class="col-lg-10 col-lg-offset-1">
+    <header>
+      <h1 class="header-title">Datasets analysis</h1>
+      <div ng-controller="SessionsCtrl" ng-show="isAuthenticated()">
+        <button class="btn btn-default signout-btn" ng-click="logout()">Sign out</button>
+      </div>
+    </header>
 
-  <%= yield %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </div>
 </div>
 
 </body>

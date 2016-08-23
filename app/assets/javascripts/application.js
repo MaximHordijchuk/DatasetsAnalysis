@@ -5,4 +5,7 @@
 //= require angular-resource
 //= require angular-devise
 //= require turbolinks
+//= require app
+//= require_tree ./controllers
+//= require_tree ./services
 //= require_tree .

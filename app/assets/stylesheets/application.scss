@@ -2,3 +2,64 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "main";
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.67rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  letter-spacing: -.1rem;
+}
+
+header {
+  position: relative;
+
+  .header-title {
+    border-bottom: 1px solid #D1D1D1;
+  }
+
+  .signout-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    float: right;
+    width: 100px;
+    transform: translate(0, -50%);
+  }
+}
+
+.btn {
+  transition: all 0.3s ease 0s;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+@media(max-width: 480px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+}

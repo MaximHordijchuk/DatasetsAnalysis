@@ -1,5 +1,30 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-<% if user_signed_in? %>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-<% end %>
+<div class="login-block" ng-show="page == 'signin' || page == 'signup'" ng-controller="SessionsCtrl">
+  <div ng-show="page == 'signin'" class="form-sign-in">
+    <h3>Sign in</h3>
+    <input type="text" ng-model="username" class="form-control" placeholder="login"/>
+    <input type="password" ng-model="password" class="form-control" placeholder="password"/>
+    <button type="submit" class="btn btn-success signin-btn" ng-click="login()">Sign in</button>
+    <button class="btn btn-default signup-btn" ng-click="goto('signup')">Sign up</button>
+  </div>
+
+  <div ng-show="page == 'signup'" class="form-sign-up">
+    <h3>Sign up</h3>
+    <input type="text" ng-model="username" class="form-control" placeholder="login"/>
+    <input type="password" ng-model="password" class="form-control" placeholder="password"/>
+    <button class="btn btn-success signup-btn" ng-click="register()">Sign up</button>
+    <button class="btn btn-default signin-btn" ng-click="goto('signin')">Sign in</button>
+  </div>
+</div>
+
+<div ng-show="page == 'index'">
+  <div ng-controller="AnalyzeCtrl">
+    <form ng-submit="analyze()">
+      <label>
+        <textarea ng-model="array"></textarea>
+      </label>
+      <br>
+      <%= submit_tag 'Analyse' %>
+    </form>
+    <p>min = {{ min }}</p>
+  </div>
+</div>

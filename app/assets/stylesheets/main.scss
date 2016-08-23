@@ -1,3 +1,25 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.login-block {
+  border: 1px solid #8290A1;
+  border-radius: 3px;
+  padding: 10px;
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  .signin-btn, .signup-btn {
+    width: 48%;
+    margin-bottom: 5px;
+  }
+
+  .form-sign-in .signup-btn {
+    float: right;
+  }
+
+  .form-sign-up .signin-btn {
+    float: right;
+  }
+}
