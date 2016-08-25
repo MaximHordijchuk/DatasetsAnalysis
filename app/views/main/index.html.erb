@@ -31,7 +31,13 @@
     <div class="panel panel-default" ng-show="results != null">
       <div class="panel-heading">Results</div>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="(key, value) in results">{{ key | capitalize }}: {{ value }}</li>
+        <li class="list-group-item">Average: {{ results.average }}</li>
+        <li class="list-group-item">Min: {{ results.min }}</li>
+        <li class="list-group-item">Max: {{ results.max }}</li>
+        <li class="list-group-item">Q1: {{ results.q1 }}</li>
+        <li class="list-group-item">Median: {{ results.median }}</li>
+        <li class="list-group-item">Q3: {{ results.q3 }}</li>
+        <li class="list-group-item">Outliers: {{ results.outliers }}</li>
       </ul>
     </div>
   </div>
