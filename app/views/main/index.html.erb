@@ -30,14 +30,14 @@
   <div class="col-md-4">
     <div class="panel panel-default" ng-show="results != null">
       <div class="panel-heading">Results</div>
-      <ul class="list-group">
-        <li class="list-group-item">Average: {{ results.average }}</li>
-        <li class="list-group-item">Min: {{ results.min }}</li>
-        <li class="list-group-item">Max: {{ results.max }}</li>
-        <li class="list-group-item">Q1: {{ results.q1 }}</li>
-        <li class="list-group-item">Median: {{ results.median }}</li>
-        <li class="list-group-item">Q3: {{ results.q3 }}</li>
-        <li class="list-group-item">Outliers: {{ results.outliers }}</li>
+      <ul class="list-group" id="analysis-results">
+        <li class="list-group-item">Average:&nbsp;{{ results.average }}</li>
+        <li class="list-group-item">Min:&nbsp;{{ results.min }}</li>
+        <li class="list-group-item">Max:&nbsp;{{ results.max }}</li>
+        <li class="list-group-item">Q1:&nbsp;{{ results.q1 }}</li>
+        <li class="list-group-item">Median:&nbsp;{{ results.median }}</li>
+        <li class="list-group-item">Q3:&nbsp;{{ results.q3 }}</li>
+        <li class="list-group-item">Outliers:&nbsp;{{ results.outliers }}</li>
       </ul>
     </div>
   </div>
