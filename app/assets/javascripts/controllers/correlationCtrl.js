@@ -1,4 +1,4 @@
-app.controller('CorrelationCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('CorrelationCtrl', ['$scope', '$http', 'Notification', function ($scope, $http, Notification) {
     $scope.calculate = function () {
         console.log("Sending datasets to the server");
         $http({
@@ -13,8 +13,7 @@ app.controller('CorrelationCtrl', ['$scope', '$http', function ($scope, $http) {
             console.log(response);
             $scope.result = response.data.result;
         }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
+            Notification.error(response.data.error);
         });
     }
 }]);

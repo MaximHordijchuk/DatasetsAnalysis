@@ -1,4 +1,4 @@
-app.controller('AnalyzeCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('AnalyzeCtrl', ['$scope', '$http', 'Notification', function ($scope, $http, Notification) {
     $scope.analyze = function () {
         console.log("Sending dataset to the server");
         $http({
@@ -11,8 +11,7 @@ app.controller('AnalyzeCtrl', ['$scope', '$http', function ($scope, $http) {
             $scope.results = response.data;
             $scope.results.outliers = $scope.results.outliers.join(',')
         }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
+            Notification.error(response.data.error);
         });
     }
 }]);

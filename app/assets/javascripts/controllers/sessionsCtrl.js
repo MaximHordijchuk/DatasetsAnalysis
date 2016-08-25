@@ -1,4 +1,4 @@
-app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', function($scope, Page, Auth) {
+app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', 'Notification', function($scope, Page, Auth, Notification) {
     var config = {
         headers: {
             'X-HTTP-Method-Override': 'POST'
@@ -16,6 +16,7 @@ app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', function($scope, Page,
             console.log("Logged in as " + user.username);
         }, function (error) {
             console.log(error);
+            Notification.error(error.data.error);
         });
     };
 
@@ -30,6 +31,16 @@ app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', function($scope, Page,
             console.log("Registered new user " + user.username);
         }, function (error) {
             console.log(error);
+            var errors = error.data.errors;
+            for (var key in errors) {
+                if (errors.hasOwnProperty(key)) {
+                    for (var i in errors[key]) {
+                        if (errors[key].hasOwnProperty(i)) {
+                            Notification.error({message: key + " " + errors[key][i], delay: 10000});
+                        }
+                    }
+                }
+            }
         });
     };
 
@@ -39,6 +50,7 @@ app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', function($scope, Page,
             console.log('Log out user ' + oldUser.username);
         }, function (error) {
             console.log(error);
+            Notification.error("Sign out error")
         });
     };
 }]);

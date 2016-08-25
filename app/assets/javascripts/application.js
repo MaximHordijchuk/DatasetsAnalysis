@@ -2,6 +2,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require angular
+//= require angular-ui-notification/angular-ui-notification.min
 //= require angular-devise
 //= require turbolinks
 //= require app
