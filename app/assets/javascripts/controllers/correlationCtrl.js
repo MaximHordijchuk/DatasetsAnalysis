@@ -5,8 +5,8 @@ app.controller('CorrelationCtrl', ['$scope', '$http', function ($scope, $http) {
             method: 'POST',
             url: '/correlation',
             data: {
-                dataset1: $scope.dataset1,
-                dataset2: $scope.dataset2
+                dataset1: $scope.datasets.dataset,
+                dataset2: $scope.datasets.second_dataset
             }
         }).then(function successCallback(response) {
             console.log("Response received");

@@ -4,7 +4,7 @@ app.controller('AnalyzeCtrl', ['$scope', '$http', function ($scope, $http) {
         $http({
             method: 'POST',
             url: '/analyze',
-            data: { dataset: $scope.dataset }
+            data: { dataset: $scope.datasets.dataset }
         }).then(function successCallback(response) {
             console.log("Response received");
             console.log(response);

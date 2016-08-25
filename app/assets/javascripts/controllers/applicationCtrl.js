@@ -1,4 +1,6 @@
-app.controller('ApplicationCtrl', ['$scope', 'Page', 'Auth', function ($scope, Page, Auth) {
+app.controller('ApplicationCtrl', ['$scope', '$rootScope', 'Page', 'Auth', function ($scope, $rootScope, Page, Auth) {
+    $rootScope.datasets = { dataset: '', second_dataset: '' };
+
     $scope.goto = function (page) {
         Page.goto(page);
         console.log("Goto " + page);
