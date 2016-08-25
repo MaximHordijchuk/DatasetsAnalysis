@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
+  devise_for :users, controllers: { sessions: 'devise_overrides/sessions' }, :skip => [:registrations]
+  as :user do
+    post 'users' => 'devise_overrides/registrations#create', :as => 'user_registration'
+    get 'users/sign_up' => 'devise_overrides/registrations#new', :as => 'new_user_registration'
+  end
+
   root to: 'main#index'
   post 'analyze' => 'main#analyze'
   post 'correlation' => 'main#correlation'
