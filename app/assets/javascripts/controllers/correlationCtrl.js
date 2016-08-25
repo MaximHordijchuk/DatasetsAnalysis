@@ -1,4 +1,4 @@
-app.controller('CorrelationCtrl', function ($scope, $http) {
+app.controller('CorrelationCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.calculate = function () {
         console.log("Sending datasets to the server");
         $http({
@@ -17,4 +17,4 @@ app.controller('CorrelationCtrl', function ($scope, $http) {
             // or server returns response with an error status.
         });
     }
-});
+}]);

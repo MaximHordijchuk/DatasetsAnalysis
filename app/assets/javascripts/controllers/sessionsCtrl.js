@@ -1,4 +1,4 @@
-app.controller('SessionsCtrl', function($scope, Page, Auth) {
+app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', function($scope, Page, Auth) {
     var config = {
         headers: {
             'X-HTTP-Method-Override': 'POST'
@@ -41,4 +41,4 @@ app.controller('SessionsCtrl', function($scope, Page, Auth) {
             console.log(error);
         });
     };
-});
+}]);

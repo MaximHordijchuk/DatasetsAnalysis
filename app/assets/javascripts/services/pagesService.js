@@ -1,5 +1,5 @@
-app.service('Page', function ($rootScope) {
+app.service('Page', ['$rootScope', function ($rootScope) {
     this.goto = function (newPage) {
         $rootScope.page = newPage;
     };
-});
+}]);

@@ -1,4 +1,4 @@
-app.controller('AnalyzeCtrl', function ($scope, $http) {
+app.controller('AnalyzeCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.analyze = function () {
         console.log("Sending dataset to the server");
         $http({
@@ -15,4 +15,4 @@ app.controller('AnalyzeCtrl', function ($scope, $http) {
             // or server returns response with an error status.
         });
     }
-});
+}]);
