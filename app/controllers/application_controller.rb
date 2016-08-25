@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # Authenticate user before any action
+  before_action :authenticate_user!
+
   # Permit :username and don't permit :email parameters
   before_action :configure_permitted_parameters, if: :devise_controller?
 

@@ -1,6 +1,8 @@
 require 'statistics'
 
 class MainController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index]
+
   # GET /
   def index
   end
