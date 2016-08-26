@@ -51,6 +51,11 @@ header {
     right: 0;
     top: 50%;
     float: right;
+
+    -o-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
 
     button {
@@ -103,7 +108,13 @@ header {
       float: none;
       margin-top: -15px;
       margin-bottom: 15px;
+
+      -o-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
       transform: none;
+
       button {
         margin-top: 5px;
       }
