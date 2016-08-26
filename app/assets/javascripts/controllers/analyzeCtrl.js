@@ -11,7 +11,7 @@ app.controller('AnalyzeCtrl', ['$scope', '$http', 'Notification', function ($sco
             $scope.results = response.data;
             $scope.results.outliers = $scope.results.outliers.join(',')
         }, function errorCallback(response) {
-            Notification.error(response.data.error);
+            Notification.error(capitalize(response.data.error));
         });
     }
 }]);

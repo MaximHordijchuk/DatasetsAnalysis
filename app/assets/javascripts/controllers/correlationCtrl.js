@@ -13,7 +13,7 @@ app.controller('CorrelationCtrl', ['$scope', '$http', 'Notification', function (
             console.log(response);
             $scope.result = response.data.result;
         }, function errorCallback(response) {
-            Notification.error(response.data.error);
+            Notification.error(capitalize(response.data.error));
         });
     }
 }]);

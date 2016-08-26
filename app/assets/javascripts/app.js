@@ -11,3 +11,7 @@ app.config(function(NotificationProvider) {
         positionY: 'bottom'
     });
 });
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

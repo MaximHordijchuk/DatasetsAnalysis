@@ -16,7 +16,7 @@ app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', 'Notification', functi
             console.log("Logged in as " + user.username);
         }, function (error) {
             console.log(error);
-            Notification.error(error.data.error);
+            Notification.error(capitalize(error.data.error));
         });
     };
 
@@ -36,7 +36,7 @@ app.controller('SessionsCtrl', ['$scope', 'Page', 'Auth', 'Notification', functi
                 if (errors.hasOwnProperty(key)) {
                     for (var i in errors[key]) {
                         if (errors[key].hasOwnProperty(i)) {
-                            Notification.error({message: key + " " + errors[key][i], delay: 10000});
+                            Notification.error({message: capitalize(key) + ": " + errors[key][i], delay: 10000});
                         }
                     }
                 }
