@@ -13,7 +13,7 @@ module DatasetValidators
   # have comma at the end.
   # E.g., '1,2,3', '1,2.4,5.,3,.6'
   def self.valid_array?(array_string)
-    return false if array_string[-1] == ','
+    return false if array_string.nil? || array_string[-1] == ','
     splitted = array_string.split(',')
     return false if splitted.size < 3
     splitted.each { |e| return false unless self.valid_float?(e) }
