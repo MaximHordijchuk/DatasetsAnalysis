@@ -1,4 +1,4 @@
-var app = angular.module("datasetsAnalysis", ["Devise", "ui-notification"]);
+var app = angular.module("datasetsAnalysis", ["Devise", "ui-notification", 'angular-loading-bar']);
 
 app.config(function(NotificationProvider) {
     NotificationProvider.setOptions({
