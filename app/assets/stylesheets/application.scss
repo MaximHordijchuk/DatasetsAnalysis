@@ -71,8 +71,8 @@ header {
   padding-bottom: 7px;
 }
 
-/* Super extra small devises */
-@media(max-width: 480px) {
+/* Extra small devises */
+@media(max-width: 768px) {
   h1 {
     font-size: 4rem;
   }
@@ -95,5 +95,31 @@ header {
 
   h6 {
     font-size: 1.5rem;
+  }
+
+  header {
+    .nav-buttons {
+      position: static;
+      float: none;
+      margin-top: -15px;
+      margin-bottom: 15px;
+      transform: none;
+      button {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+/* Super extra small devises */
+@media(max-width: 480px) {
+  header {
+    .header-title {
+      text-align: center;
+    }
+
+    .nav-buttons {
+      text-align: center;
+    }
   }
 }
