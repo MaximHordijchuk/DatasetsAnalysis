@@ -1,4 +1,5 @@
 class CustomFailure < Devise::FailureApp
+  # Change redirect url for Devise. Sign in page by default
   def redirect_url
     root_url
   end

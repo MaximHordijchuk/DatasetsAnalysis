@@ -14,15 +14,20 @@ class Statistics
     }
   end
 
+  # Returns average value in the dataset
   def self.average(dataset)
     dataset.inject(:+).to_f / dataset.size
   end
 
+  # Input dataset should be sorted in ascending order.
+  # Returns median of the dataset
   def self.median(sorted_dataset)
     len = sorted_dataset.size
     len % 2 == 1 ? sorted_dataset[len / 2] : (sorted_dataset[len / 2 - 1] + sorted_dataset[len / 2]) / 2.0
   end
 
+  # Input dataset should be sorted in ascending order.
+  # Returns first quartile of the dataset
   def self.first_quartile(sorted_dataset)
     len = sorted_dataset.size
     idx = len / 4
@@ -39,6 +44,8 @@ class Statistics
     first_quartile
   end
 
+  # Input dataset should be sorted in ascending order.
+  # Returns third quartile of the dataset
   def self.third_quartile(sorted_dataset)
     len = sorted_dataset.size
     idx = len / 2 + len / 4
