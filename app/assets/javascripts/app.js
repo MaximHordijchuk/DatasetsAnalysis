@@ -1,7 +1,7 @@
 var app = angular.module("datasetsAnalysis", ["Devise", "ui-notification", 'angular-loading-bar']);
 
 // Configuration for notifications
-app.config(function(NotificationProvider) {
+app.config(['NotificationProvider', function(NotificationProvider) {
     NotificationProvider.setOptions({
         delay: 3000,
         startTop: 15,
@@ -11,7 +11,7 @@ app.config(function(NotificationProvider) {
         positionX: 'left',
         positionY: 'bottom'
     });
-});
+}]);
 
 // Capitalize first letter in the string
 function capitalize(string) {
