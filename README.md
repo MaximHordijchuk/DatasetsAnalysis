@@ -82,7 +82,9 @@ Run instructions
 Once you have set up your environment, you could run your application.
 ##### Production:
 
-    $ bundle exec rails server -p 80 -e production
+    # bundle exec rails server -p 80 -e production
+
+You can run your application using port 80 only under superuser account.
 
 ##### Development:
 
